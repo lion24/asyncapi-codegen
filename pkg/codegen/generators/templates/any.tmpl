@@ -10,7 +10,7 @@
     {{else if and $value.ReferenceTo $value.ReferenceTo.Description}}
     // Description: {{$value.ReferenceTo.Description}}
     {{end -}}
-    {{namify $key}} {{if and (not (isRequired $ $key)) (ne $value.Type "array")}}*{{end}}{{template "any" $value}} `json:"{{snakeCase $key}}"`
+    {{namify $key}} {{if and (not (isRequired $ $key)) (ne $value.Type "array")}}*{{end}}{{template "any" $value}} `json:"{{$key}}"`
     {{end -}}
 }
 

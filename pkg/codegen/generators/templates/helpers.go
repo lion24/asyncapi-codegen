@@ -46,12 +46,6 @@ var (
 	matchAllCap   = regexp.MustCompile("([a-z0-9])([A-Z])")
 )
 
-func SnakeCase(sentence string) string {
-	snake := matchFirstCap.ReplaceAllString(sentence, "${1}_${2}")
-	snake = matchAllCap.ReplaceAllString(snake, "${1}_${2}")
-	return strings.ToLower(snake)
-}
-
 func ReferenceToTypeName(ref string) string {
 	parts := strings.Split(ref, "/")
 
